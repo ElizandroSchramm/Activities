@@ -1,0 +1,1 @@
+select O.OrgDesc as localizacao, T.TarFechamento as fechamento from Tarefa T, Organiza O where O.OrgID = T.OrgIdGrp and T.Tarid = @tarefaId

@@ -1,0 +1,55 @@
+<html lang="en" ng-app="activitiesController">
+
+<head>
+  <title>Atividades de tarefas</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="/common/css/bootstrap.css" />
+  <link rel="stylesheet" href="/common/css/bootstrap-theme.css" />
+</head>
+
+<body ng-controller="AppActivitiesController as controller">
+
+  <div class="container">
+
+  <h3 class="control-label">Informe o número da tarefa que deseja saber os status:</h3>
+
+  
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+		<td><input type="text" name="input" ng-model="controller.taskChosen" name="input"/></td>
+        <td title="Quadros"> <input type="button" value="Carregar" style="width: 100%" ng-click="controller.getDesc()" class="btn btn-success"/></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Esta tarefa já passou por:</h3>
+
+  <table class="table table-striped">
+    <tbody>
+	  <tr>
+		<td><b>{{controller.taskSource}}</b></td>		
+		<td/>
+	  </tr>
+      <tr ng-repeat="task in controller.tasksList">
+		 <td>{{task.description}}</td>
+		 <td>{{task.username}}</td>
+      </tr>
+	  <tr>
+		<td><b>{{controller.taskStatus}}</b></td>		
+		<td/>
+	  </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+  <script src="/common/js/jquery.min.js"></script>
+  <script src="/common/js/bootstrap.min.js"></script>
+  <script src="/common/js/angular.min.js"></script>
+  <script src="js/activitiescontroller.js"></script>
+
+</body>
+
+</html>
